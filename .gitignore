@@ -1,0 +1,13 @@
+.vscode
+06_Foods.code-workspace
+*.pyc
+*.swp
+__pycache__
+.DS_Store
+local_settings.py 
+migrations
+*.env
+static
+node_modules
+data
+Makefile
