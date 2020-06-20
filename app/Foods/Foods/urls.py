@@ -23,11 +23,15 @@ router = routers.DefaultRouter()
 # router.register(r'nutrients', views.)
 router.register(r'nutrients/all', views.allNutrientsViewSet)
 router.register(r'nutrients/five', views.fiveNutrientsViewSet)
-# router.register(r'nutrients/all/search', views.allNutrientsViewSet)
-# router.register(r'nutrients/five/search', views.fiveNutrientsViewSet)
-# router.register(r'search', views.searchFiveNutrientsViewSet)
+# router.register(r'foods', views.foodViewSet)
+# router.register(r'foods/search?q=', views.foodViewSet)
+# router.register(r'foods/{food_id}', views)
+# router.register(r'foods/{food_id}/description', views)
+# router.register(r'foods/{food_id}/status', views)
+# router.register(r'foods/{food_id}/nutrients/five', views)
+# router.register(r'foods/{food_id}/nutrients/detail', views)
 
 urlpatterns = [
-    path('foods-api/', include(router.urls)),
+    path('foods-api/v1/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]

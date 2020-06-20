@@ -18,14 +18,14 @@ class fiveNutrientsViewSet(viewsets.ReadOnlyModelViewSet):
     five nutrients api
     """
     queryset = models.five_nutrients.objects.all()
-    serializer_class = serializers.fiveNfutrientsSerializer
+    serializer_class = serializers.fiveNutrientsSerializer
 
 class allNutrientsViewSet(viewsets.ReadOnlyModelViewSet):
     """
     japanese_food_standard_ingredients_list api
     """
     queryset = models.japanese_food_standard_ingredients_list.objects.all()
-    serializer_class = serializers.japanese_food_standard_ingredients_listSerializer
+    serializer_class = serializers.detailNutrientsSerializer
 
 # class searchFiveNutrientsViewSet(viewsets.ReadOnlyModelViewSet):
 #     """

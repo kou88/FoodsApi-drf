@@ -6,18 +6,14 @@ class foodSerializer(serializers.HyperlinkedModelSerializer):
         model = models.food
         fields = ['food_id', 'food_name_hiragana']
 
-class fiveNfutrientsSerializer(serializers.HyperlinkedModelSerializer):
+class fiveNutrientsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.five_nutrients
-        fields = '__all__'    
+        fields = ['pk', 'food_name']    
 
-class japanese_food_standard_ingredients_listSerializer(serializers.ModelSerializer):
+class detailNutrientsSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.japanese_food_standard_ingredients_list
         fields = '__all__'
 
-class items(serializers.ModelSerializer):
-    class Meta:
-        model = models.japanese_food_standard_ingredients_list
-        fiels = ['FOOD_GROUP', 'Tagnames', 'VITAMINA']
     
