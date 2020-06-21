@@ -20,14 +20,15 @@ from FoodsApi import views
 
 router = routers.DefaultRouter()
 # router.register(r'foods', views.foodViewSet)
-# router.register(r'foods/search?q=', views.foodViewSet)
+# router.register(r'foods/search', views.SearchFoodsFiveViewSet)
+router.register(r'search', views.SearchFoodsFiveViewSet)
 # router.register(r'foods/{food_id}', views)
 # router.register(r'foods/{food_id}/description', views)
 # router.register(r'foods/{food_id}/status', views)
-# router.register(r'food/{food_id}/nutrients/five', views.foodsFiveViewSet)
-# router.register(r'food/{food_id}/nutrients/detail', views.foodsDetailViewSet)
-router.register(r'five', views.foodsFiveViewSet)
-# router.register(r'detail', views.foodsDetailViewSet)
+# router.register(r'food/{food_id}/nutrients/five', views.FoodsFiveViewSet)
+# router.register(r'food/{food_id}/nutrients/detail', views.FoodsDetailViewSet)
+router.register(r'five', views.FoodsFiveViewSet)
+# router.register(r'detail', views.FoodsDetailViewSet)
 
 urlpatterns = [
     path('foods-api/v1/', include(router.urls)),
