@@ -19,17 +19,15 @@ from rest_framework import routers
 from FoodsApi import views
 
 router = routers.DefaultRouter()
-# router.register(r'', views.foodViewSet)
-# router.register(r'nutrients', views.)
-router.register(r'nutrients/all', views.allNutrientsViewSet)
-router.register(r'nutrients/five', views.fiveNutrientsViewSet)
 # router.register(r'foods', views.foodViewSet)
 # router.register(r'foods/search?q=', views.foodViewSet)
 # router.register(r'foods/{food_id}', views)
 # router.register(r'foods/{food_id}/description', views)
 # router.register(r'foods/{food_id}/status', views)
-# router.register(r'foods/{food_id}/nutrients/five', views)
-# router.register(r'foods/{food_id}/nutrients/detail', views)
+# router.register(r'food/{food_id}/nutrients/five', views.foodsFiveViewSet)
+# router.register(r'food/{food_id}/nutrients/detail', views.foodsDetailViewSet)
+router.register(r'five', views.foodsFiveViewSet)
+# router.register(r'detail', views.foodsDetailViewSet)
 
 urlpatterns = [
     path('foods-api/v1/', include(router.urls)),

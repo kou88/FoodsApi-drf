@@ -22,7 +22,7 @@ class food_jfsil_relations(models.Model):
 
 class five_nutrients(models.Model):
     """ 五大栄養素テーブル """
-    food_id = models.CharField("食材ID", null=False, primary_key=True, max_length=10)
+    food_id = models.OneToOneField(food, related_name='nutrients_five', primary_key=True, on_delete=models.PROTECT)
     food_name = models.CharField("食材名", null=False, max_length=256)
     food_group = models.IntegerField("食品群", null=False)
     energy_kcal = models.IntegerField("エネルギー（kcal）", null=False)

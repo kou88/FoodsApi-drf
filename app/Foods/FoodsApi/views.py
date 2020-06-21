@@ -3,6 +3,7 @@ from FoodsApi import serializers
 from rest_framework import viewsets
 from rest_framework import permissions
 from rest_framework.response import Response
+from rest_framework.generics import RetrieveAPIView
 
 class foodViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -13,19 +14,13 @@ class foodViewSet(viewsets.ReadOnlyModelViewSet):
         serializer_class = serializers.foodSerializer
         return Response(serializer.data)
 
-class fiveNutrientsViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    five nutrients api
-    """
-    queryset = models.five_nutrients.objects.all()
-    serializer_class = serializers.fiveNutrientsSerializer
+class foodsFiveViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.food.objects.all()
+    serializer_class = serializers.foodsFiveSerializer
 
-class allNutrientsViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    japanese_food_standard_ingredients_list api
-    """
-    queryset = models.japanese_food_standard_ingredients_list.objects.all()
-    serializer_class = serializers.detailNutrientsSerializer
+class foodsDetailViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = models.food.objects.all()
+    serializer_class = serializers.foodsDetailSerializer
 
 # class searchFiveNutrientsViewSet(viewsets.ReadOnlyModelViewSet):
 #     """
