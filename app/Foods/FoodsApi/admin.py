@@ -18,6 +18,12 @@ class japanese_food_standard_ingredients_listAdmin(ImportExportModelAdmin):
     list_display = ['FOOD_GROUP','FOOD_NUM','Tagnames']
     list_display_links = ['FOOD_NUM']
 
+@admin.register(models.five_nutrients)
+class five_nutrientsAdmin(ImportExportModelAdmin):
+    """ 五大栄養素テーブル """
+    resource_class = resources.five_nutrientsResource
+    list_display = ['food_id','food_name','food_group']
+    list_display_links = ['food_id']
+
 admin.site.register(models.food_jfsil_relations)
-admin.site.register(models.five_nutrients)
 admin.site.register(models.nutrients_list)
