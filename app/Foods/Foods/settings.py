@@ -21,12 +21,12 @@ env = environ.Env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY=env.get_value('SECRET_KEY', str)
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY=env.get_value('SECRET_KEY', str)
+
 DEBUG = env.get_value('DEBUG', bool)
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
